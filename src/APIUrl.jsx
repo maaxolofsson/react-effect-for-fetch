@@ -1,0 +1,1 @@
+export const baseApiUrl = "https://boolean-uk-api-server.fly.dev/";
