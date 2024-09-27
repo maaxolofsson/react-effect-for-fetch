@@ -1,4 +1,4 @@
-import { baseApiUrl } from "../../APIUrl";
+import { booleanAPI } from "../../APIUrl";
 import { useState, useEffect } from "react";
 
 function UsersSection() {
@@ -7,14 +7,12 @@ function UsersSection() {
   useEffect(
     () =>
       async function () {
-        const res = await fetch(baseApiUrl + "maaxolofsson/contact");
+        const res = await fetch(booleanAPI + "maaxolofsson/contact");
         const data = await res.json();
         setUserData(data);
       },
     []
   );
-
-  console.log(userData);
 
   return (
     <>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { baseApiUrl } from "../../APIUrl";
+import { booleanAPI } from "../../APIUrl";
 
 function ArtsSection() {
   const [artData, setArtData] = useState([]);
@@ -7,7 +7,7 @@ function ArtsSection() {
   useEffect(
     () =>
       async function () {
-        const res = await fetch(baseApiUrl + "art");
+        const res = await fetch(booleanAPI + "art");
         const data = await res.json();
         setArtData(data);
       },
@@ -23,7 +23,7 @@ function ArtsSection() {
             {artData.map((artist, artistIx) => (
               <li key={artistIx}>
                 <div className="frame">
-                  <img src={baseApiUrl + artist.imageURL} />
+                  <img src={booleanAPI + artist.imageURL} />
                 </div>
                 <h3>{artist.title}</h3>
                 <p>Artist: {artist.artist}</p>
